@@ -43,7 +43,7 @@
   Cesium.GeoJsonDataSource.load('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json', {
     stroke: Cesium.Color.YELLOW,
     strokeWidth: 1,
-    fill: Cesium.Color.DARKGRAY.withAlpha(0.9) // DARK GRAY by default
+    fill: Cesium.Color.DARKGRAY.withAlpha(1.0) // DARK GRAY by default
   }).then(dataSource => {
     viewer.dataSources.add(dataSource);
     viewer.zoomTo(dataSource);
@@ -61,7 +61,7 @@
           entity.properties.link = countryData[name].link;
         } else {
           // Country not in our data; assign dark gray
-          entity.polygon.material = Cesium.Color.DARKGRAY.withAlpha(0.8);
+          entity.polygon.material = Cesium.Color.DARKGRAY.withAlpha(1.0);
           entity.polygon.outline = true;
           entity.polygon.outlineColor = Cesium.Color.YELLOW;
           entity.properties.link = null;
